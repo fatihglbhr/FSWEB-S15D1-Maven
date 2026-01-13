@@ -31,7 +31,10 @@ public class Grocery {
 
     public static void addItems(String input){
         String[] items = input.split(",");
-        groceryList.addAll(Arrays.asList(items));
+        for(String item: items){
+            if(!groceryList.contains(item))
+                groceryList.add(item);
+        }
         Collections.sort(groceryList);
     }
 
